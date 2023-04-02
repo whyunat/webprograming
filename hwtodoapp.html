@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>과제#1 ToDoList</title>
+<style>
+	body{
+		border-radius: 10px;
+		background-color: wheat;
+		padding: 15px;
+	}
+	input{
+		border-radius: 5px;
+		border-style: dotted;
+		width: 75%;
+		padding: 10px;
+		box-sizing: border-box;
+	}
+	.btn{
+		background-color: black;
+		padding: 15px 15px;
+		margin:2px;
+		border-radius: 5px;
+		color: white;
+	}
+	ul{
+		border-radius:5px;
+		border-style: dotted;
+		list-style-type:none;
+		background: #FFFFFF; 
+	}
+</style>
+<script>
+	function addItem() {
+		let todo = document.getElementById("item");
+		let list = document.getElementById("todolist");
+		let listitem = document.createElement("li");
+		
+		listitem.innerText = todo.value;
+		list.appendChild(listitem);
+	
+		todo.value = "";
+		todo.focus();
+	}
+</script>
+</head>
+<body>
+	<h2>My ToDo App</h2>
+	<hr>
+	<div>
+		<input id="item" type="text" placeholder="할일을 입력하세요..">
+		<button type="button" class="btn" onclick="addItem()">할일 추가</button>
+	</div>
+	<hr>
+	<ul id="todolist" class="list-group"></ul>
+</body>
+</html>
